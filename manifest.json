@@ -1,11 +1,11 @@
 {
-  "name": "__MSG_appName__",
+  "name": "CoinValueGatherer",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "__MSG_appDescription__",
+  "description": "An app that gathers data from coin exchange platforms and displays it with MPH",
   "icons": {
-    "16": "icons/icon-16.png",
-    "128": "icons/icon-128.png"
+    "16": "icons/icon.png",
+    "128": "icons/icon.png"
   },
   "default_locale": "en",
   "background": {
@@ -37,8 +37,8 @@
   ],
   "browser_action": {
     "default_icon": {
-      "19": "icons/icon-19.png",
-      "38": "icons/icon-38.png"
+      "19": "icons/icon.png",
+      "38": "icons/icon.png"
     },
     "default_title": "Extension Boilerplate",
     "default_popup": "popup.html"
