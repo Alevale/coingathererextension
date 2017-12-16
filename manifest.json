@@ -25,8 +25,8 @@
   "content_scripts": [
     {
       "matches": [
-        "http://miningpoolhub.com/*",
-        "https://miningpoolhub.com/*"
+        "http://miningpoolhub.com/?page=account&action=balances",
+        "https://miningpoolhub.com/?page=account&action=balances"
       ],
       "js": [
         "scripts/contentscript.js"
