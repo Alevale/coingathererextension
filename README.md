@@ -1,3 +1,10 @@
+## Easy Way
+
+Download the extension from the store:
+- For Chrome [click here]()
+- For Opera (Work in progress)
+- For Firefox (Work in progress)
+
 ## Installation
 
 1. Clone the repository
@@ -28,13 +35,18 @@ The following tasks can be used when you want to start developing the extension 
 Run `npm run dist` to create a zipped, production-ready extension for each browser. You can then upload that to the appstore.
 
 
-## Features
+## Features, not ordered by delivery time
 
 - [x] Display full amount of coins credited
 - [x] Conversion of the credited coins to USD ($)
 - [x] Display of historical data for that coin
 - [x] Display total of USD ($) that you own in the pool
 - [x] Local cache for the requests to not overload the coin server
+- [ ] Add extensionfor Firefox and Opera
+- [ ] Internationalization, planned supported languages (en, es, de, fr, nl, ru?)
+- [ ] Disable button to leave miningpoolhub as it was originally
+- [ ] Coin conversion to user local currency
+
 
 If you have any questions or comments, please create a new issue. I'd be happy to hear your thoughts.
 
