@@ -46,6 +46,7 @@ Run `npm run dist` to create a zipped, production-ready extension for each brows
 - [ ] Internationalization, planned supported languages (en, es, de, fr, nl, ru?)
 - [ ] Disable button to leave miningpoolhub as it was originally
 - [ ] Coin conversion to user local currency
+- [ ] Add logentries or any other logging factory to track down errors in the page
 
 
 If you have any questions or comments, please create a new issue. I'd be happy to hear your thoughts.
