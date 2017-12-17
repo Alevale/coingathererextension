@@ -1,7 +1,7 @@
 ## Easy Way
 
 Download the extension from the store:
-- For Chrome [click here]()
+- For Chrome [click here](https://chrome.google.com/webstore/detail/coinvaluegatherer/mkekmkkaginnjcoicjcoieodjmbbnfcb)
 - For Opera (Work in progress)
 - For Firefox (Work in progress)
 
