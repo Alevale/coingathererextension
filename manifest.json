@@ -13,12 +13,7 @@
       "scripts/background.js"
     ]
   },
-  "permissions": [
-    "tabs",
-    "storage",
-    "http://*/*",
-    "https://*/*"
-  ],
+  "permissions": [],
   "options_ui": {
     "page": "options.html"
   },
