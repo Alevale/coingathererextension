@@ -45,26 +45,37 @@ let getCoinValuesFromTable = () => {
             let totalCoins = match ? Number(match[1]) + Number(match[2]) : Number(coins);
 
             makeCallForCoinValue(coinName).then((res) => {
-                let value = res.price_usd * totalCoins;
-                let value24Ago = ((-res.percent_change_24h / 100) + 1 ) * res.price_usd * totalCoins;
+                if (res && res.percent_change_24h) {
+                    let value = res.price_usd * totalCoins;
+                    let value24Ago = ((-res.percent_change_24h / 100) + 1 ) * res.price_usd * totalCoins;
 
-                totalMoney += value;
-                totalMoney24Ago += value24Ago;
+                    totalMoney += value;
+                    totalMoney24Ago += value24Ago;
 
-                $('.totalmoneydisclaimer').text(`Total value now $${totalMoney.toFixed(2)}. 
+                    $('.totalmoneydisclaimer').text(`Total value now $${totalMoney.toFixed(2)}. 
                     This same amount of coins 24 hours ago was valued in $${totalMoney24Ago.toFixed(2)}. 
                     The difference is $${(totalMoney - totalMoney24Ago).toFixed(2)}`);
-                $('.tableheaderComment').text(`Coin values in real time`);
+                    $('.tableheaderComment').text(`Coin values in real time`);
 
-                let td = $('<td></td>');
+                    let td = $('<td></td>');
 
-                td.append($('<tr></tr>').text(`Credited coins ${totalCoins}`));
-                td.append($('<tr></tr>').text(`USD ($${value.toFixed(2)})`));
-                td.append($('<tr></tr>').text(`USD 24 ago ($${value24Ago.toFixed(2)})`));
-                td.append($('<tr></tr>').text(`${coinName} price 24h ago $${(((-res.percent_change_24h / 100) + 1 ) * res.price_usd).toFixed(2)}`));
-                td.append($('<tr></tr>').text(`${coinName} price now $${Number(res.price_usd).toFixed(2)}, ${res.percent_change_24h}%`));
+                    td.append($('<tr></tr>').text(`Credited coins ${totalCoins}`));
+                    td.append($('<tr></tr>').text(`USD ($${value.toFixed(2)})`));
+                    td.append($('<tr></tr>').text(`USD 24 ago ($${value24Ago.toFixed(2)})`));
+                    td.append($('<tr></tr>').text(`${coinName} price 24h ago $${(((-res.percent_change_24h / 100) + 1 ) * res.price_usd).toFixed(2)}`));
+                    td.append($('<tr></tr>').text(`${coinName} price now $${Number(res.price_usd).toFixed(2)}, ${res.percent_change_24h}%`));
 
-                row.append(td);
+                    row.append(td);
+
+                } else {
+                    let td = $('<td></td>');
+
+                    td.append($('<tr></tr>').text(`Sorry, right now this coin is not supported`));
+                    td.append($('<tr></tr>').text(`We are still working on implementing more coins to the system`));
+
+                    row.append(td);
+                }
+
             });
 
         });
