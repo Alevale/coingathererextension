@@ -4,7 +4,7 @@ let cacheSolution = require('./cacheSolution');
 let makeCallForCoinValue = (coinName) => {
     // NOTE: IF there is nothing in the cache or the
     // time is too far away in the past 20171215:Alevale
-    // if ( cacheSolution.getFromCache(coinName) && cacheSolution.isExpired(cacheSolution.getFromCache(coinName).timestamp) ) {
+    if ( !cacheSolution.getFromCache(coinName) || cacheSolution.isExpired(cacheSolution.getFromCache(coinName).timestamp) ) {
 
         return new Promise((res, rej) => {
             return $.ajax({
@@ -21,11 +21,9 @@ let makeCallForCoinValue = (coinName) => {
             });
         });
 
-    // } else {
-    //
-    //     return Promise.resolve(cacheSolution.getFromCache(coinName).data)
-    //
-    // }
+    } else {
+        return Promise.resolve(cacheSolution.getFromCache(coinName).data)
+    }
 };
 
 module.exports = {
