@@ -1,6 +1,6 @@
 {
   "name": "CoinValueGatherer",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "manifest_version": 2,
   "description": "An app that gathers data from coin exchange platforms and displays it with MPH",
   "icons": {

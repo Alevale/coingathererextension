@@ -1,7 +1,7 @@
 import ext from "./utils/ext";
-let cacheSolution = require('./utils/cacheSolution');
-
-let $ = require('jquery');
+const cacheSolution = require('./utils/cacheSolution');
+const $ = require('jquery');
+const getSymbolFromCurrency = require('currency-symbol-map');
 
 let optionsLink = document.querySelector(".js-options");
 optionsLink.addEventListener("click", function(e) {
@@ -15,7 +15,8 @@ $(document).ready(function(){
     let select = $('#currencies');
     supportedCurrencies.forEach((currency) => {
         let option = $('<option/>');
-        option.attr({ 'value': currency }).text(currency).on('click', (val) => {
+        let currencySymbol = getSymbolFromCurrency(currency);
+        option.attr({ 'value': currency }).text(`${currency} ${currencySymbol}`).on('click', (val) => {
             console.log('clicked!', val);
         });
         select.append(option);
